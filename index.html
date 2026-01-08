@@ -119,6 +119,20 @@
             font-size: 24px;
         }
 
+        .banner-container {
+            margin-top: 25px;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .banner-container iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -147,12 +161,16 @@
             .card {
                 padding: 50px 40px;
             }
+
+            .banner-container iframe {
+                height: 250px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <!-- YAHAN APNI IMAGE LAGAO - "7.jpg" ko replace karo apni image se -->
+        <!-- Profile Image -->
         <img class="profile-image" src="5.jpg" alt="Movie Store">
         
         <h1 class="name">Muneeb Editz</h1>
@@ -166,6 +184,11 @@
             <span class="whatsapp-icon">💬</span>
             Message on WhatsApp
         </button>
+
+        <!-- Banner added below WhatsApp button -->
+        <div class="banner-container">
+            <iframe src="https://otieu.com/4/9807042" allowfullscreen></iframe>
+        </div>
     </div>
 
     <script>
@@ -173,19 +196,10 @@
             const whatsappButton = document.getElementById('whatsappButton');
             
             whatsappButton.addEventListener('click', function() {
-                // Your WhatsApp number
                 const phoneNumber = '923048866554';
-                
-                // Predefined message
                 const message = "*_Send Me Video Editing details_* ";
-                
-                // Encode the message for URL
                 const encodedMessage = encodeURIComponent(message);
-                
-                // Create the WhatsApp URL
                 const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-                
-                // Open WhatsApp
                 window.open(whatsappURL, '_blank');
             });
         });
